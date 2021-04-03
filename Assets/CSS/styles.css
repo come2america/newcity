@@ -1,0 +1,210 @@
+
+
+/* Header Styles, this includes up until the buttons */
+
+* {
+    font-family: 'Roboto', sans-serif;
+ }
+
+ body {
+     /* background-image: url("../Images/concrete-texture.png"); */
+     background-image: url("../Images/road.jpeg");
+     backface-visibility: 50%;
+     background-size: cover;
+     background-position: center;
+     max-width: 100;
+
+
+
+}
+
+.responsive-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.main {
+    font-family: 'Permanent Marker', sans-serif;
+    text-align: center;
+    font-size: 35px;
+    margin: 30px;
+}
+
+.waves-effect {
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+}
+
+.waves-effect:hover {
+    background-color: rgb(156, 1, 1);
+    color:black;
+    font-family: 'Roboto', sans-serif;
+}
+
+.waves-effect:focus {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: black;
+}
+
+.input-field label {
+    color: #000;
+  }
+
+.input-field input:focus + label {
+   color: black !important;
+ }
+
+.row .input-field input:focus {
+   border-bottom: 1px solid rgb(156, 1, 1)!important;
+   box-shadow: 0 1px 0 0 rgb(156, 1, 1) !important
+ }
+
+ .button {
+     margin: 15px;
+ }
+
+/* Body Styles start here */
+#tagline {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    background:  rgba(0, 0, 0, 0.555);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#displayDiv {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    background:  rgba(0, 0, 0, 0.555);
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+ .placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+ }
+
+ .info {
+     color: white;
+     background-color: rgba(0, 0, 0, 0.555);
+     width: 100%;
+     height: 400px;;
+     padding: 10px;
+     position: relative;
+ }
+
+ img {
+    width: 200px;
+ }
+
+ .image {
+     text-align: center;
+ }
+
+ .iframe-container {
+     position: relative;
+     width: 100%;
+     padding-bottom: 56.25%;
+     height: 315px;
+ }
+
+.iframe-container iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    margin-top: 70px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* Footer Styles */
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.555);
+    text-align: center;
+    margin-top: 70px;
+    width: 100%;
+    margin-bottom: 40px;
+    background:  rgba(0, 0, 0, 0.555);
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+#share-buttons img {
+    width: 35px;
+    padding: 5px;
+    border: 0;
+    box-shadow: 0;
+    display: inline;
+    }
+#game-img img {
+    width: 140px;
+  padding: 20px;
+    border: 2;
+    box-shadow: 2;
+    display: inline;
+}
+
+
+#submit
+{
+   display: none;
+}
+#authO
+{
+   display: none;
+}
