@@ -1,4 +1,4 @@
-var redirect_uri = "http://localhost/songcity22/index.html"; // change this your value
+var redirect_uri = "https://mylocationsong.com/"; // change this your value
 //var redirect_uri = "http://127.0.0.1:5500/index.html";
 
 
