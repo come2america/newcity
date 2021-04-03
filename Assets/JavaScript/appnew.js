@@ -1,4 +1,4 @@
-var redirect_uri = "https://mylocationsong.com/"; // change this your value
+var redirect_uri = "http://localhost/songcity22/index.html"; // change this your value
 //var redirect_uri = "http://127.0.0.1:5500/index.html";
 
 
@@ -163,8 +163,11 @@ function refreshDevicesss(){
 function handleDevicesResponse(){
     if ( this.status == 200 ){
         var data = JSON.parse(this.responseText);
-
+//console.log(data);
+var myJSONNameE = JSON.stringify(data.artists.items[0].images[0].url);
+console.log(myJSONNameE);
     var myJSONName = JSON.stringify(data.artists.items[0].name);
+str = myJSONNameE.replace(/"/g,"")
     var myJSON = JSON.stringify(data.artists.items[0].uri);
 
     var obj = JSON.parse(myJSON);
@@ -176,6 +179,7 @@ function handleDevicesResponse(){
 
               document.getElementById("myData").innerHTML = sillyString;
                  document.getElementById("myData2").innerHTML = sillyString2;
+                 document.getElementById("artImg").src = str;
           //       console.log(data.tracks[0].name);
 
     }
@@ -193,11 +197,15 @@ function handleTrackResponse(){
         var data = JSON.parse(this.responseText);
 
     //    console.log(data);
-
-    var myJSONNameTrack = JSON.stringify(data.tracks[0].name);
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  var randOs = getRandomInt(10);
+    var myJSONNameTrack = JSON.stringify(data.tracks[ ""+ randOs +"" ].name);
     document.getElementById("myData3").innerHTML = myJSONNameTrack;
 
           //       console.log(data.tracks[0].name);
+
 
 
 
@@ -320,13 +328,15 @@ function artistGetter3() {
                         var myJSONNameArt = JSON.stringify(data.query.categorymembers[5].title);
                         var objNAmeArt = JSON.parse(myJSONNameArt);
                         document.getElementById("myData6").innerHTML = objNAmeArt;
+                       document.getElementById("myData61").innerHTML = objNAmeArt;
+                       document.getElementById("myData31").innerHTML = objNAmeArt;
        }
   })
 
 }
 
 
-function artistGetter1() {
+function artistGetter111() {
 var xhr = new XMLHttpRequest();
 
 //var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
@@ -379,8 +389,90 @@ xhr.onload = function() {
 // Send request to the server asynchronously
 xhr.send();
 };
+function artistGetter1() {
+var xhr = new XMLHttpRequest();
+
+//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
+var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_Atlanta'";
+
+// Provide 3 arguments (GET/POST, The URL, Async True/False)
+xhr.open('GET', url, true);
+
+// Once request has loaded...
+xhr.onload = function() {
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  var randO = 7;
+  var randOs = getRandomInt(100);
+    // Parse the request into JSON
+    var data = JSON.parse(this.response);
+
+      let pages = data.query.pages;
+
+var wiki = (pages[Object.keys(pages)[ ""+ randOs +"" ]].title);
+
+ document.getElementById("myData6").innerHTML = wiki;
+}
+xhr.send();
+};
 
 
+
+function artistGetter1111() {
+var xhr = new XMLHttpRequest();
+
+//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
+var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch='Category:Rappers_from_Atlanta'";
+//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch='songs by pitbull'";
+
+// Provide 3 arguments (GET/POST, The URL, Async True/False)
+xhr.open('GET', url, true);
+
+// Once request has loaded...
+xhr.onload = function() {
+    // Parse the request into JSON
+    var data = JSON.parse(this.response);
+
+    // Log the data object
+    console.log(data);
+
+    // Log the page objects
+  //  console.log(data.query.pages.object[1].title);
+
+    // Loop through the data object
+    // Pulling out the titles of each page
+    for (var i in data.query.pages) {
+        console.log(data.query.pages[i].title);
+        document.getElementById("myData6").innerHTML = data.query.pages[i].title;
+
+    //    var myJSONNameArt = JSON.stringify(data.query.pages[i].title);
+                    //       var objNAmeArt = JSON.parse(myJSONNameArt);
+                        //   document.getElementById("myData6").innerHTML = objNAmeArt;
+
+
+                               //var americancat = response.query.categorymembers
+                                var americancatA = (data.query.pages[i].title);
+                                     //console.log(americancat);
+
+                                     for (var i = 0; i < americancatA.length; i++) {
+                                      //   var songlist = americancatA[Math.floor(Math.random()*americancatA.length)];
+                                         var songlist = Math.floor(Math.random() * americancatA.length);
+                                        //songlistgetter1(songlist)
+                                  //    document.getElementById("myData6").innerHTML = americancatA;
+                                //       document.getElementById("myData6").innerHTML = songlist, americancatA[songlist];
+
+}}
+/*
+     var myJSONNameArt = JSON.stringify(data.query.pages[1].title);
+                        var objNAmeArt = JSON.parse(myJSONNameArt);
+                        document.getElementById("myData6").innerHTML = objNAmeArt;
+                        */
+}
+// Send request to the server asynchronously
+xhr.send();
+};
 
 
 function youtubeVid1() {
@@ -495,6 +587,20 @@ function resolveAfter7Seconds() {
   },1000);
    });
 }
+
+function resolveAfter722Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+
+      var artistN = document.getElementById("myData6").innerHTML;
+      var trackN = document.getElementById("myData3").innerHTML;
+      $("#amazonlink").attr({ href: "https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords=" + artistN + " " + trackN })
+
+
+    resolve(70);
+  },1000);
+   });
+}
 async function asyncCall() {
  artistGetter1();
   //console.log("hello");
@@ -504,6 +610,8 @@ async function asyncCall() {
   const result3 = await resolveAfter5Seconds();
   const result4 = await resolveAfter6Seconds();
   const result5 = await resolveAfter7Seconds();
+  const result6 = await resolveAfter722Seconds();
+
 //  console.log(result);
   // expected output: "resolved"
 }

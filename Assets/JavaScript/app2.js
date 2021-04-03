@@ -10,7 +10,7 @@ var image = '';
 var ituneurl = ''
 
 var tags= [" A Song For Where You Are The Most" ,"A Song For The Road", "A Song For Your Destination", "A Song For Any Location"];
-setInterval(function(){ 
+setInterval(function(){
 
 
 $("#tagline").html("<h3>" + tags[Math.floor((Math.random() * 4))]+ "</h3>");
@@ -42,7 +42,7 @@ function songlistgetter(songlist) {
                     dataType: "jsonp",
                     success: function (response) {
                         // console.log(response)
-                        var image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
+                      //  var image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
                         $("#buylink").attr({ href: " https://geo.itunes.apple.com/us/album/id" + response.results[0].collectionId + "?i=" + response.results[0].trackId + "&at=1000lR4Q" })
                         $("#amazonlink").attr({ href: "https://www.amazon.com/gp/search?ie=UTF8&tag=locationsong1-20&linkCode=ur2&linkId=a2760e14a2d286d92bc32fdeae1f4b8d&camp=1789&creative=9325&index=digital-music&keywords=" + response.results[0].artistName + " " + response.results[0].trackName })
                         selectedTrackname = response.results[0].trackName
@@ -158,7 +158,7 @@ $("#submit").on("click", function (event) {
                 success: function (response) {
 
                     console.log(response)
-                    image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
+                    //image = $("<img>").attr({ src: response.results[0].artworkUrl100 })
 
                     selectedTrackname = response.results[0].trackName
                     selectedArtist = response.results[0].artistName
@@ -194,13 +194,13 @@ $("#submit").on("click", function (event) {
         var tdtitle = "<p>" + data.usertitle + "</p>";
         var tdartist = "<p>" + data.userartist + "</p>";
         var tdtrackid = "<p>" + data.usertrackid + "</p>";
-    
+
         //$("#displayDiv").html(tdstreet, tdcity, tdstate)
-    
+
         $('#title').html(tdtitle);
         $('#artist').html(tdartist);
         $('#wiki').html(tdtrackid);
-    
+
     })
     // Get the modal
 var modal = document.getElementById("myModal");
@@ -211,7 +211,7 @@ var btn = document.getElementById("submit");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal 
+// When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
 }
@@ -249,7 +249,7 @@ function mappingApi() {
 
         console.log("mappingApi", selectedArtist + selectedTrackname);
 
-        // $("#wavesframe").attr('src', "https://embed.waze.com/iframe?zoom=13&lat="+response.results[0].locations[0].latLng.lat+"&lon="+response.results[0].locations[0].latLng.lng+"&pin=1") 
+        // $("#wavesframe").attr('src', "https://embed.waze.com/iframe?zoom=13&lat="+response.results[0].locations[0].latLng.lat+"&lon="+response.results[0].locations[0].latLng.lng+"&pin=1")
         var mapProp = {
             center: new google.maps.LatLng(response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
             zoom: 15
@@ -259,14 +259,14 @@ function mappingApi() {
             position: new google.maps.LatLng(response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
             map: map,
 
-       
-       
+
+
         });
         marker.setMap(map);
-        
+
         // var geocoder;
         // var map;
-        // var address = street+city+state 
+        // var address = street+city+state
 
         // function initialize() {
         //   geocoder = new google.maps.Geocoder();
@@ -328,20 +328,20 @@ $("#current").on("click", function () {
 
    // Get the button that opens the modal
    var btn = document.getElementById("current");
-   
+
    // Get the <span> element that closes the modal
    var span = document.getElementsByClassName("close")[0];
-   
-   // When the user clicks on the button, open the modal 
+
+   // When the user clicks on the button, open the modal
    btn.onclick = function() {
      modal.style.display = "block";
    }
-   
+
    // When the user clicks on <span> (x), close the modal
    span.onclick = function() {
      modal.style.display = "none";
    }
-   
+
    // When the user clicks anywhere outside of the modal, close it
    window.onclick = function(event) {
      if (event.target == modal) {
