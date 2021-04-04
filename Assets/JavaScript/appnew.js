@@ -618,3 +618,8 @@ async function asyncCall() {
 
 asyncCall();
 }
+$("#submit").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#linkhereQ").offset().top
+    }, 2000);
+});
