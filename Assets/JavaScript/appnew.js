@@ -26,6 +26,9 @@ console.log(ARTISTs)
 
 
 function onPageLoad(){
+ document.getElementById("state").value = "CA";
+  document.getElementById("musicInfo").style.display = "none";
+    document.getElementById("myData5").style.display = "none";
   /*
   $(function() {
       console.log( "ready!" );
@@ -149,7 +152,7 @@ function refreshDevices(){
 function refreshDevicesss(){
 
 
-    var h = document.getElementById("myData6").innerHTML;
+    var h = document.getElementById("myData6xxx").innerHTML;
 
   let ARTIST = "https://api.spotify.com/v1/search?q=" + h + "&type=artist&market=US&limit=1&offset=0";
     callApi( "GET", ARTIST, null, handleDevicesResponse );
@@ -179,6 +182,7 @@ str = myJSONNameE.replace(/"/g,"")
 
               document.getElementById("myData").innerHTML = sillyString;
                  document.getElementById("myData2").innerHTML = sillyString2;
+                  document.getElementById("myData6").innerHTML = sillyString2;
                  document.getElementById("artImg").src = str;
           //       console.log(data.tracks[0].name);
 
@@ -297,104 +301,17 @@ function fetchTracksss(){
 
 }
 
-
-function artistGetter2() {
-
-  $.ajax({
-         url: 'https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category:Lists_of_songs_recorded_by_American_artists',
-          success: function(data){
-
-        }
-  })
-
-}
-
-function artistGetter3() {
-  console.log('doublehelloer');
-
-  $.ajax({
-    //     url: 'https://cors-anywhere.herokuapp.com/http://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category:American_musicians_by_city',
-         url: 'https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category:Rappers_from_Atlanta',
-        //    url: 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category:Rappers_from_Atlanta',
-          success: function(data){
-  /*
-            console.log(data)
-                console.log(data.query.categorymembers[0].title);
-                  console.log(data.query.categorymembers[1].title);
-                    console.log(data.query.categorymembers[2].title);
-                        console.log(data.query.categorymembers[3].title);
-                        console.log(data.query.categorymembers);
-*/
-                        var myJSONNameArt = JSON.stringify(data.query.categorymembers[5].title);
-                        var objNAmeArt = JSON.parse(myJSONNameArt);
-                        document.getElementById("myData6").innerHTML = objNAmeArt;
-                       document.getElementById("myData61").innerHTML = objNAmeArt;
-                       document.getElementById("myData31").innerHTML = objNAmeArt;
-       }
-  })
-
-}
-
-
-function artistGetter111() {
-var xhr = new XMLHttpRequest();
-
-//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
-var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch='Category:Rappers_from_Atlanta'";
-//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch='songs by pitbull'";
-
-// Provide 3 arguments (GET/POST, The URL, Async True/False)
-xhr.open('GET', url, true);
-
-// Once request has loaded...
-xhr.onload = function() {
-    // Parse the request into JSON
-    var data = JSON.parse(this.response);
-
-    // Log the data object
-    console.log(data);
-
-    // Log the page objects
-  //  console.log(data.query.pages.object[1].title);
-
-    // Loop through the data object
-    // Pulling out the titles of each page
-    for (var i in data.query.pages) {
-        console.log(data.query.pages[i].title);
-        document.getElementById("myData6").innerHTML = data.query.pages[i].title;
-
-    //    var myJSONNameArt = JSON.stringify(data.query.pages[i].title);
-                    //       var objNAmeArt = JSON.parse(myJSONNameArt);
-                        //   document.getElementById("myData6").innerHTML = objNAmeArt;
-
-
-                               //var americancat = response.query.categorymembers
-                                var americancatA = (data.query.pages[i].title);
-                                     //console.log(americancat);
-
-                                     for (var i = 0; i < americancatA.length; i++) {
-                                      //   var songlist = americancatA[Math.floor(Math.random()*americancatA.length)];
-                                         var songlist = Math.floor(Math.random() * americancatA.length);
-                                        //songlistgetter1(songlist)
-                                  //    document.getElementById("myData6").innerHTML = americancatA;
-                                //       document.getElementById("myData6").innerHTML = songlist, americancatA[songlist];
-
-}}
-/*
-     var myJSONNameArt = JSON.stringify(data.query.pages[1].title);
-                        var objNAmeArt = JSON.parse(myJSONNameArt);
-                        document.getElementById("myData6").innerHTML = objNAmeArt;
-                        */
-}
-// Send request to the server asynchronously
-xhr.send();
-};
 function artistGetter1() {
+
+var stateV = document.getElementById("state").value;
+console.log(stateV);
+
 var xhr = new XMLHttpRequest();
 
 //var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
-var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_Atlanta'";
-
+//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_Atlanta'";
+var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_" + stateV + "'";
+console.log(url);
 // Provide 3 arguments (GET/POST, The URL, Async True/False)
 xhr.open('GET', url, true);
 
@@ -413,66 +330,12 @@ xhr.onload = function() {
 
 var wiki = (pages[Object.keys(pages)[ ""+ randOs +"" ]].title);
 
- document.getElementById("myData6").innerHTML = wiki;
+ document.getElementById("myData6xxx").innerHTML = wiki;
 }
 xhr.send();
 };
 
 
-
-function artistGetter1111() {
-var xhr = new XMLHttpRequest();
-
-//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
-var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=20&gsrsearch='Category:Rappers_from_Atlanta'";
-//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch='songs by pitbull'";
-
-// Provide 3 arguments (GET/POST, The URL, Async True/False)
-xhr.open('GET', url, true);
-
-// Once request has loaded...
-xhr.onload = function() {
-    // Parse the request into JSON
-    var data = JSON.parse(this.response);
-
-    // Log the data object
-    console.log(data);
-
-    // Log the page objects
-  //  console.log(data.query.pages.object[1].title);
-
-    // Loop through the data object
-    // Pulling out the titles of each page
-    for (var i in data.query.pages) {
-        console.log(data.query.pages[i].title);
-        document.getElementById("myData6").innerHTML = data.query.pages[i].title;
-
-    //    var myJSONNameArt = JSON.stringify(data.query.pages[i].title);
-                    //       var objNAmeArt = JSON.parse(myJSONNameArt);
-                        //   document.getElementById("myData6").innerHTML = objNAmeArt;
-
-
-                               //var americancat = response.query.categorymembers
-                                var americancatA = (data.query.pages[i].title);
-                                     //console.log(americancat);
-
-                                     for (var i = 0; i < americancatA.length; i++) {
-                                      //   var songlist = americancatA[Math.floor(Math.random()*americancatA.length)];
-                                         var songlist = Math.floor(Math.random() * americancatA.length);
-                                        //songlistgetter1(songlist)
-                                  //    document.getElementById("myData6").innerHTML = americancatA;
-                                //       document.getElementById("myData6").innerHTML = songlist, americancatA[songlist];
-
-}}
-/*
-     var myJSONNameArt = JSON.stringify(data.query.pages[1].title);
-                        var objNAmeArt = JSON.parse(myJSONNameArt);
-                        document.getElementById("myData6").innerHTML = objNAmeArt;
-                        */
-}
-// Send request to the server asynchronously
-xhr.send();
-};
 
 
 function youtubeVid1() {
@@ -602,6 +465,8 @@ function resolveAfter722Seconds() {
    });
 }
 async function asyncCall() {
+  document.getElementById("musicInfo").style.display = "flex";
+  document.getElementById("myData5").style.display = "block";
  artistGetter1();
   //console.log("hello");
 //  const result11 = await resolveAfter11Seconds();
