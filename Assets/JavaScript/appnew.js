@@ -487,6 +487,6 @@ asyncCall();
 }
 $("#submit").click(function() {
     $('html, body').animate({
-        scrollTop: $("#linkhereQ").offset().top
+        scrollTop: $("#hideCont").offset().top
     }, 2000);
 });
