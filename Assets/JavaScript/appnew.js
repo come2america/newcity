@@ -29,6 +29,7 @@ function onPageLoad(){
  document.getElementById("state").value = "CA";
   document.getElementById("musicInfo").style.display = "none";
     document.getElementById("myData5").style.display = "none";
+   document.getElementById("hideCont").style.display = "none";
   /*
   $(function() {
       console.log( "ready!" );
@@ -467,6 +468,7 @@ function resolveAfter722Seconds() {
 async function asyncCall() {
   document.getElementById("musicInfo").style.display = "flex";
   document.getElementById("myData5").style.display = "block";
+    document.getElementById("hideCont").style.display = "block";
  artistGetter1();
   //console.log("hello");
 //  const result11 = await resolveAfter11Seconds();
