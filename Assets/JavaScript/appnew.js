@@ -252,7 +252,7 @@ function callApi(method, url, body, callback){
     let xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', 'Bearer ' + 'BQCjTpNKkC1w_ZSEvqlKwhSTBAvCYH6iFaF7R6fLjUqhyz33CrXd2aMI975x3q6IdKa9eVJaN06iuWYEwFA');
+    xhr.setRequestHeader('Authorization', 'Bearer ' + 'BQBeH5ocysgFyfP8lBGhyRiOr9xdAFK4180WsPl03xUzY6l0jfGr47cmDjDtFUxBNH3HarS06bmaL7lfnpQ');
     xhr.send(body);
     xhr.onload = callback;
 }
