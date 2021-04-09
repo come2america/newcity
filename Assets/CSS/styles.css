@@ -202,7 +202,7 @@ footer {
 
 #submit
 {
-   display: none;
+ display: initial;
 }
 #authO
 {
