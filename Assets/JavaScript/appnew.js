@@ -136,8 +136,8 @@ function handleAuthorizationResponse(){
         onPageLoad();
     }
     else {
-        console.log(this.responseText);
-        alert(this.responseText);
+       // console.log(this.responseText);
+     //   alert(this.responseText);
     }
 }
 
@@ -192,8 +192,8 @@ str = myJSONNameE.replace(/"/g,"")
         refreshAccessToken()
     }
     else {
-        console.log(this.responseText);
-        alert(this.responseText);
+       // console.log(this.responseText);
+      //  alert(this.responseText);
     }
 }
 
