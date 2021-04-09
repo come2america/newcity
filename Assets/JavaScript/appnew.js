@@ -49,12 +49,12 @@ function onPageLoad(){
         if ( access_token == null ){
             // we don't have an access token so present token section
             document.getElementById("tokenSection").style.display = 'block';
-          //  document.getElementById("authO").style.display = 'initial';
+            document.getElementById("authO").style.display = 'initial';
         }
         else {
             // we have an access token so present device section
             document.getElementById("deviceSection").style.display = 'block';
-           //   document.getElementById("submit").style.display = 'initial';
+              document.getElementById("submit").style.display = 'initial';
         //    refreshDevices();
         //    refreshPlaylists();
         //    currentlyPlaying();
@@ -192,8 +192,8 @@ str = myJSONNameE.replace(/"/g,"")
         refreshAccessToken()
     }
     else {
-     //   console.log(this.responseText);
-     //   alert(this.responseText);
+        console.log(this.responseText);
+        alert(this.responseText);
     }
 }
 
@@ -219,8 +219,8 @@ function getRandomInt(max) {
         refreshAccessToken()
     }
     else {
-     //   console.log(this.responseText);
-     //   alert(this.responseText);
+        console.log(this.responseText);
+        alert(this.responseText);
     }
 }
 
@@ -252,7 +252,7 @@ function callApi(method, url, body, callback){
     let xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', 'Bearer ' + 'BQBeH5ocysgFyfP8lBGhyRiOr9xdAFK4180WsPl03xUzY6l0jfGr47cmDjDtFUxBNH3HarS06bmaL7lfnpQ');
+    xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
     xhr.send(body);
     xhr.onload = callback;
 }
