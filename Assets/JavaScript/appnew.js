@@ -239,7 +239,7 @@ function getRandomInt(max) {
     }
     else {
      //   console.log(this.responseText);
-        alert(this.responseText);
+     //   alert(this.responseText);
     }
 }
 
@@ -297,8 +297,8 @@ function handleApiResponse(){
         refreshAccessToken()
     }
     else {
-        console.log(this.responseText);
-        alert(this.responseText);
+       // console.log(this.responseText);
+      //  alert(this.responseText);
     }
 }
 
