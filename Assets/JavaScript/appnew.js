@@ -334,7 +334,9 @@ var xhr = new XMLHttpRequest();
 
 //var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
 //var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_Atlanta'";
-var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_" + stateV + "'";
+//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_" + stateV + "'";
+var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:musicians_from_" + stateV + "'";
+  
 console.log(url);
 // Provide 3 arguments (GET/POST, The URL, Async True/False)
 xhr.open('GET', url, true);
