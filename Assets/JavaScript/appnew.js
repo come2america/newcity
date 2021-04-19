@@ -16,6 +16,24 @@ const TOKEN = "https://accounts.spotify.com/api/token";
 const ARTIST = "https://api.spotify.com/v1/search?q=pitbull&type=artist&market=US&limit=1&offset=0";
 
 
+function artistGetterEr() {
+  //  console.log(data);
+var xhr = new XMLHttpRequest();
+
+//var url = "http://localhost:8888/";
+var url = "https://peaceful-brook-79218.herokuapp.com";
+// Provide 3 arguments (GET/POST, The URL, Async True/False)
+xhr.open('GET', url, true);
+
+// Once request has loaded...
+xhr.onload = function() {
+  console.log(xhr.responseText);
+    console.log(this.response);
+    document.getElementById("spaceEr").innerHTML = this.response;
+}
+xhr.send();
+};
+
 function  myFunctionChange(){
 var g = document.getElementById("inputART").value;
 const ARTISTs = "https://api.spotify.com/v1/search?q=" + g + "&type=artist&market=US&limit=1&offset=0";
@@ -30,6 +48,7 @@ function onPageLoad(){
   document.getElementById("musicInfo").style.display = "none";
     document.getElementById("myData5").style.display = "none";
    document.getElementById("hideCont").style.display = "none";
+    artistGetterEr();
   /*
   $(function() {
       console.log( "ready!" );
@@ -48,13 +67,13 @@ function onPageLoad(){
         access_token = localStorage.getItem("access_token");
         if ( access_token == null ){
             // we don't have an access token so present token section
-            document.getElementById("tokenSection").style.display = 'block';
-            document.getElementById("authO").style.display = 'initial';
+    //        document.getElementById("tokenSection").style.display = 'block';
+      //      document.getElementById("authO").style.display = 'initial';
         }
         else {
             // we have an access token so present device section
-            document.getElementById("deviceSection").style.display = 'block';
-              document.getElementById("submit").style.display = 'initial';
+        //    document.getElementById("deviceSection").style.display = 'block';
+            //  document.getElementById("submit").style.display = 'initial';
         //    refreshDevices();
         //    refreshPlaylists();
         //    currentlyPlaying();
@@ -249,10 +268,11 @@ function addDevice(item){
 }
 
 function callApi(method, url, body, callback){
+  var fgsS = document.getElementById("spaceEr").innerHTML;
     let xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+    xhr.setRequestHeader('Authorization', 'Bearer ' + fgsS);
     xhr.send(body);
     xhr.onload = callback;
 }
