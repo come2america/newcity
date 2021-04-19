@@ -49,6 +49,9 @@ function onPageLoad(){
     document.getElementById("myData5").style.display = "none";
    document.getElementById("hideCont").style.display = "none";
     artistGetterEr();
+   refreshDevicesss();
+     refreshTopTracks();
+    //asyncCall();
   /*
   $(function() {
       console.log( "ready!" );
@@ -238,8 +241,8 @@ function getRandomInt(max) {
         refreshAccessToken()
     }
     else {
-     //   console.log(this.responseText);
-     //   alert(this.responseText);
+      //  console.log(this.responseText);
+      //  alert(this.responseText);
     }
 }
 
@@ -297,7 +300,7 @@ function handleApiResponse(){
         refreshAccessToken()
     }
     else {
-       // console.log(this.responseText);
+      //  console.log(this.responseText);
       //  alert(this.responseText);
     }
 }
