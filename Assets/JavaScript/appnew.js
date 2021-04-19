@@ -238,7 +238,7 @@ function getRandomInt(max) {
         refreshAccessToken()
     }
     else {
-        console.log(this.responseText);
+     //   console.log(this.responseText);
         alert(this.responseText);
     }
 }
