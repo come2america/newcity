@@ -44,13 +44,17 @@ console.log(ARTISTs)
 
 
 function onPageLoad(){
- document.getElementById("state").value = "CA";
+ document.getElementById("state").value = "california";
   document.getElementById("musicInfo").style.display = "none";
     document.getElementById("myData5").style.display = "none";
    document.getElementById("hideCont").style.display = "none";
     artistGetterEr();
-   refreshDevicesss();
-     refreshTopTracks();
+  setTimeout(function(){
+    asyncCall();
+  //   refreshDevicesss();
+  //   refreshTopTracks();
+   }, 2000);
+
     //asyncCall();
   /*
   $(function() {
@@ -241,8 +245,18 @@ function getRandomInt(max) {
         refreshAccessToken()
     }
     else {
-      //  console.log(this.responseText);
+      // console.log(this.responseText);
       //  alert(this.responseText);
+        resolveAfter2Seconds();
+        // asyncCall();
+        //  artistGetter1();
+        //  artistGetterEr();
+      //  setTimeout(function(){
+      //    asyncCall();
+      //      alert("hello");
+        //   refreshDevicesss();
+        //   refreshTopTracks();
+    //     }, 2000);
     }
 }
 
@@ -329,14 +343,15 @@ function artistGetter1() {
 
 var stateV = document.getElementById("state").value;
 console.log(stateV);
-
+var iO = stateV.replace(/ /g,"_");
+console.log(iO);
 var xhr = new XMLHttpRequest();
 
 //var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='New_England_Patriots'";
 //var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_Atlanta'";
-var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_" + stateV + "'";
-//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:musicians_from_" + stateV + "'";
-  
+//var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:Rappers_from_" + stateV + "'";
+var url = "https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=100&gsrsearch='Category:list_of_musicians_from_" + iO + "'";
+
 console.log(url);
 // Provide 3 arguments (GET/POST, The URL, Async True/False)
 xhr.open('GET', url, true);
@@ -432,7 +447,7 @@ function resolveAfter3Seconds() {
        refreshDevicesss();
 
     resolve(20);
-  },1000);
+  },300);
     });
 }
 
@@ -443,7 +458,7 @@ function resolveAfter4Seconds() {
        refreshTopTracks();
 
     resolve(30);
-  },1000);
+  },300);
    });
 }
 function resolveAfter5Seconds() {
@@ -453,7 +468,7 @@ function resolveAfter5Seconds() {
       youtubeVid1()
 
     resolve(40);
-  },1000);
+  },300);
    });
 }
 function resolveAfter6Seconds() {
@@ -463,7 +478,7 @@ function resolveAfter6Seconds() {
       youtubeVid1()
 
     resolve(60);
-  },1000);
+  },300);
    });
 }
 function resolveAfter7Seconds() {
@@ -473,7 +488,7 @@ function resolveAfter7Seconds() {
       youtubeVid2()
 
     resolve(70);
-  },1000);
+  },300);
    });
 }
 
