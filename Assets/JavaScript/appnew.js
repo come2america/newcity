@@ -15,30 +15,7 @@ const TOKEN = "https://accounts.spotify.com/api/token";
 
 const ARTIST = "https://api.spotify.com/v1/search?q=pitbull&type=artist&market=US&limit=1&offset=0";
 
-//popup
-function myFunctionPop() {
-		 const cookieContainerPop = document.querySelector(".cookie-container2");
-		 cookieContainerPop.style.display = "block"; 
-	}
-	function myFuncPopClose() {
-		 const cookieContainerPop = document.querySelector(".cookie-container2");
-		 cookieContainerPop.style.display = "none"; 
-	}
-	
-const cookieContainer = document.querySelector(".cookie-container2");
-const cookieButton = document.querySelector(".link-2");
 
-cookieButton.addEventListener("click", () => {
-  cookieContainer.classList.remove("active");
-  localStorage.setItem("cookieBannerDisplayed", "true");
-});
-
-setTimeout(() => {
-  if (!localStorage.getItem("cookieBannerDisplayed")) {
-    cookieContainer.classList.add("active");
-  }
-}, 2);
-//popup end
 function artistGetterEr() {
   //  console.log(data);
 var xhr = new XMLHttpRequest();
