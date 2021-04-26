@@ -278,3 +278,13 @@ display:block;
 a#butX {
     font-size: 52px;
 }
+
+@media only screen and (max-width: 600px) {
+.div-block-35 iframe {
+    width: 50%;
+    height: 50%;
+}
+.div-block-35 {
+    height: 50%;
+}
+}
