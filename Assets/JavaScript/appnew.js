@@ -16,9 +16,27 @@ const TOKEN = "https://accounts.spotify.com/api/token";
 const ARTIST = "https://api.spotify.com/v1/search?q=pitbull&type=artist&market=US&limit=1&offset=0";
 
 //popup
+
 function myFunctionPop() {
 		 const cookieContainerPop = document.querySelector(".cookie-container2");
 		 cookieContainerPop.style.display = "block";
+
+
+     function myFunctionPopVideoSelector() {
+       let fruits = ['https://www.youtube.com/embed/toSR0u0trNs', 'https://www.youtube.com/embed/bLFGbuA957E','https://www.youtube.com/embed/coPozpP8cSQ','https://www.youtube.com/embed/_8c9MN7d4d8']
+     console.log("hello");
+     console.log(fruits);
+     function getRandomInt(max) {
+         return Math.floor(Math.random() * max);
+       }
+       var randOs = getRandomInt(4);
+
+         var myJSONNameTrack = fruits[ ""+ randOs +"" ];
+       console.log(fruits[ ""+ randOs +"" ]);
+       //  console.log(myJSONNameTrack);
+       document.getElementById("vidId").src = myJSONNameTrack;
+     }
+
 	}
 	function myFuncPopClose() {
 		 const cookieContainerPop = document.querySelector(".cookie-container2");
@@ -38,7 +56,23 @@ setTimeout(() => {
     cookieContainer.classList.add("active");
   }
 }, 2);
+
 //popup end
+function myFunctionPopVideoSelector() {
+  let fruits = ['https://www.youtube.com/embed/toSR0u0trNs', 'https://www.youtube.com/embed/bLFGbuA957E','https://www.youtube.com/embed/coPozpP8cSQ','https://www.youtube.com/embed/_8c9MN7d4d8']
+console.log("hello");
+console.log(fruits);
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  var randOs = getRandomInt(4);
+
+    var myJSONNameTrack = fruits[ ""+ randOs +"" ];
+  console.log(fruits[ ""+ randOs +"" ]);
+  //  console.log(myJSONNameTrack);
+  document.getElementById("vidId").src = myJSONNameTrack;
+}
+
 function artistGetterEr() {
   //  console.log(data);
 var xhr = new XMLHttpRequest();
