@@ -22,7 +22,7 @@ function myFunctionPop() {
 		 cookieContainerPop.style.display = "block";
 
 
-   myFunctionPopVideoSelector()
+   myFunctionPopVideoSelector();
 
 	}
 	function myFuncPopClose() {
