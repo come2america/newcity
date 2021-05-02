@@ -95,6 +95,7 @@ function onPageLoad(){
     artistGetterEr();
   setTimeout(function(){
     asyncCall();
+	  myFunctionPopVideoSelector();
   //   refreshDevicesss();
   //   refreshTopTracks();
    }, 2000);
