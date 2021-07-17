@@ -229,7 +229,7 @@ window.onclick = function(event) {
 }
 
 });
-//$("#wavesframe").attr('src', 'https://maps.google.com/maps?q=' + street + city + state + '&z=10&output=embed')
+$("#wavesframe").attr('src', 'https://maps.google.com/maps?q=' + street + city + state + '&z=10&output=embed')
 
 function mappingApi() {
     var apiKey = "jqnjIbmIDCL7UaGiP6SPvbfGTlGTs9z0";
@@ -241,8 +241,8 @@ function mappingApi() {
     }).then(function (response) {
 
         $(".placeholder").html("Latitude: " + response.results[0].locations[0].latLng.lat + " Longitude: " + response.results[0].locations[0].latLng.lng);
-        $("#lat").val(response.results[0].locations[0].latLng.lat);
-        $("#longit").val(response.results[0].locations[0].latLng.lng);
+        $(".placeholderLatI").html(response.results[0].locations[0].latLng.lat);
+        $(".placeholderLongI").val(response.results[0].locations[0].latLng.lng);
 
         var upperStreet = street.toUpperCase();
         var upperCity = city.toUpperCase();
@@ -252,8 +252,7 @@ function mappingApi() {
 
         console.log("mappingApi", selectedArtist + selectedTrackname);
 
-
-      /*
+        // $("#wavesframe").attr('src', "https://embed.waze.com/iframe?zoom=13&lat="+response.results[0].locations[0].latLng.lat+"&lon="+response.results[0].locations[0].latLng.lng+"&pin=1")
         var mapProp = {
             center: new google.maps.LatLng(response.results[0].locations[0].latLng.lat, response.results[0].locations[0].latLng.lng),
             zoom: 15
@@ -266,11 +265,7 @@ function mappingApi() {
 
 
         });
-
-
-        marker.setMap(map,locations);
-
-*/
+        marker.setMap(map);
 
         // var geocoder;
         // var map;
@@ -363,7 +358,6 @@ youtubeVid()
 
 
 })
-/*
     function currentor() {
         // Note: This example requires that you consent to location sharing when
         // prompted by your browser. If you see the error "The Geolocation service
@@ -377,8 +371,6 @@ youtubeVid()
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
         }
-
-
 
         function showPosition(position) {
             x.innerHTML = "Latitude: " + position.coords.latitude +
@@ -399,7 +391,7 @@ youtubeVid()
         }
         getLocation()
     }
-*/
+
 
 var database = firebase.database();
 $("#loveit").on("click", function (event) {
@@ -430,4 +422,3 @@ $("#hateit").on("click", function () {
     $("#linkhere").empty();
     artistGetter();
 })
-

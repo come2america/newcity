@@ -287,13 +287,22 @@ a#butX {
 .div-block-35 {
    // height: 50%;
 }
- .div-block-35 {   
+ .div-block-35 {
    // width: 100%;
     }
     .home-20-pop {
- 
+
    // width: auto;
    // height: auto;
-   
+
 }
+}
+.artistImg {
+    max-height: 50px;
+    max-width: 50px !important;
+}
+#youtubeIframeE {
+    position: inherit!important;
+    height: 126px!important;
+    width: 62%!important;
 }

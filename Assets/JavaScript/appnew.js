@@ -88,6 +88,7 @@ console.log(ARTISTs)
 
 
 function onPageLoad(){
+//	initialize();
  document.getElementById("state").value = "california";
   document.getElementById("musicInfo").style.display = "none";
     document.getElementById("myData5").style.display = "none";
@@ -255,7 +256,9 @@ str = myJSONNameE.replace(/"/g,"")
               document.getElementById("myData").innerHTML = sillyString;
                  document.getElementById("myData2").innerHTML = sillyString2;
                   document.getElementById("myData6").innerHTML = sillyString2;
+									document.getElementById("artistA").value = sillyString2;
                  document.getElementById("artImg").src = str;
+								 document.getElementById("artistSpotifyImgSrc").value = str;
           //       console.log(data.tracks[0].name);
 
     }
@@ -276,10 +279,11 @@ function handleTrackResponse(){
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
   var randOs = getRandomInt(10);
     var myJSONNameTrack = JSON.stringify(data.tracks[ ""+ randOs +"" ].name);
     document.getElementById("myData3").innerHTML = myJSONNameTrack;
-
+document.getElementById("trackTitleA").value = JSON.parse(myJSONNameTrack);
           //       console.log(data.tracks[0].name);
 
 
@@ -465,7 +469,8 @@ function youtubeVid2() {
   var hAId = document.getElementById("myData4").innerHTML;
            document.getElementById("myData5").src = "https://www.youtube.com/embed/" + hAId;
  document.getElementById("myData5").style.height = "605px";
-
+   document.getElementById("youtubeIframe").value = "https://www.youtube.com/embed/" + hAId;
+	 // document.getElementById("youtubeIframe").value = "hello";
 }
 
 
